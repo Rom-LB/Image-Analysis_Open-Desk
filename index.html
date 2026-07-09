@@ -135,19 +135,19 @@
     </div>
 
     <script>
-        // Spécifiez ici une date manuelle au format 'YYYY-MM-DD' (ex: '2026-07-16') ou laissez null pour désactiver
-        const manualDate = null; // Exemple : '2026-07-16'
+        // Spécifiez ici une date manuelle au format 'YYYY-MM-DD' (ex: '2026-07-17') ou laissez null pour désactiver
+        const manualDate = null; // Exemple : '2026-07-17'
 
-        // Fonction pour calculer le prochain mercredi à 10h
-        function getNextWednesday() {
+        // Fonction pour calculer le prochain jeudi à 10h
+        function getNextThursday() {
             const now = new Date();
-            const nextWednesday = new Date();
-            nextWednesday.setDate(now.getDate() + (3 - now.getDay() + 7) % 7); // 3 = mercredi
-            nextWednesday.setHours(10, 0, 0, 0);
-            if (nextWednesday < now) {
-                nextWednesday.setDate(nextWednesday.getDate() + 7);
+            const nextThursday = new Date();
+            nextThursday.setDate(now.getDate() + (4 - now.getDay() + 7) % 7); // 4 = jeudi
+            nextThursday.setHours(10, 0, 0, 0);
+            if (nextThursday < now) {
+                nextThursday.setDate(nextThursday.getDate() + 7);
             }
-            return nextWednesday;
+            return nextThursday;
         }
 
         // Fonction pour formater la date en anglais
@@ -169,9 +169,9 @@
                 }
             }
             
-            // Si la date manuelle est passée ou non définie, on affiche le prochain mercredi
-            const nextWednesday = getNextWednesday();
-            nextSessionElement.textContent = formatDate(nextWednesday);
+            // Si la date manuelle est passée ou non définie, on affiche le prochain jeudi
+            const nextThursday = getNextThursday();
+            nextSessionElement.textContent = formatDate(nextThursday);
         }
 
         // Mise à jour de la date de dernière mise à jour
